@@ -1,5 +1,9 @@
 import React from 'react';
 
+import TodoList from './components/TodoList';
+import Todo from './components/Todo';
+import TodoForm from './components/TodoForm';
+
 const todos = [
     {
         id:1,
