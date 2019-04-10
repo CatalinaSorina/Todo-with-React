@@ -3,7 +3,7 @@ import React from 'react';
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
 
-const todos = [
+let todos = [
     {
         id:1,
         task:'Brush teeth',
@@ -39,10 +39,31 @@ class TodoApp extends React.Component {
         }
     }
 
+    newTodo = aNewTodo => {
+        this.todos.push({
+            id:this.todos.length+1,
+            task:aNewTodo,
+            finished: false
+        });
+
+        this.setState({todos: todos});
+    }
+
+    checkTodo = todoId => {
+        this.state.todos.map(todo => (
+            (todo.id===todoId) ? !todo.finished:todo
+        ))
+
+        this.setState({
+            todos:this.todos
+        });
+    }
     render() {
         return (
             <div>
                 <h1>To do:</h1>
+                <TodoForm newTodo={this.newTodo} todosForm={this.state.todos}/>
+                <TodoList todos={this.state.todos} checkTodo={this.checkTodo}/>
             </div>
         )
     }

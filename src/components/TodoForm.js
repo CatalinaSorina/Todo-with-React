@@ -18,12 +18,20 @@ class TodoForm extends React.Component {
         this.setState({ todo:'' });
     }
 
+
+    deleteFinishedTodos = () => {
+        this.props.todosForm.filter(todo=> todo.finished===false)
+    }
+
     render() {
         return (
-            <form onSubmit={this.submitTodo}>
-                <input name='todo' value={this.state.todo} onChange={this.changes}/>
-                <button>new</button>
-            </form>
+            <div>
+                <form onSubmit={this.submitTodo}>
+                    <input name='todo' value={this.state.todo} onChange={this.changes}/>
+                    <button>new</button>
+                </form>
+                <button onClick={this.deleteFinishedTodos}>Clear todos</button>
+            </div>
         )
     }
 }
