@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(rgb(20, 8, 8),rgb(63, 39, 32));
+    font-family: cursive;
+    cursor: default;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+}
+
+#root h1 {
+    background: rgba(97, 61, 61, 0.7);
+    border-radius: 10%;
+    box-shadow: 0 0 0.5rem 0.1rem black;
+    padding: 1rem;
+    margin: 1rem;
+} #root h1::selection {
+    background-color: black;
+    color:rgba(97, 61, 61, 0.7);
+}
