@@ -9,7 +9,7 @@ class TodoForm extends React.Component {
     }
 
     changes = e => {
-        this.setState({ [e.target.task]: e.target.value });
+        this.setState({ [e.target.name]: e.target.value });
     }
 
     submitTodo = e => {
