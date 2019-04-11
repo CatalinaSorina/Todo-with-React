@@ -50,12 +50,16 @@ class TodoApp extends React.Component {
     }
 
     checkTodo = todoId => {
-        this.state.todos.map(todo => (
-            (todo.id===todoId) ? !todo.finished:todo
-        ))
-
         this.setState({
-            todos:this.todos
+            todos: this.state.todos.map(todo => {
+                if (todo.id === todoId) {
+                    return {
+                        ...todo,
+                        finished:!todo.finished
+                    };
+                }
+                return todo;
+            })
         });
     }
     render() {
