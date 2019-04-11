@@ -40,13 +40,14 @@ class TodoApp extends React.Component {
     }
 
     newTodo = aNewTodo => {
-        this.todos.push({
-            id:this.todos.length+1,
+        this.state.todos.push({
+            id:(this.state.todos.length+1),
             task:aNewTodo,
             finished: false
         });
 
-        this.setState({todos: todos});
+        this.setState({todos: this.state.todos});
+        console.log(this.state.todos);
     }
 
     checkTodo = todoId => {
