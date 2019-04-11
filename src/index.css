@@ -17,7 +17,63 @@ body {
     box-shadow: 0 0 0.5rem 0.1rem black;
     padding: 1rem;
     margin: 1rem;
+    text-align: center;
 } #root h1::selection {
     background-color: black;
     color:rgba(97, 61, 61, 0.7);
+}
+
+.todos{
+    display: flex;
+    flex-direction: column;
+    background: rgba(0,0,0,0.5);
+    margin: 1rem;
+}
+
+.todo {
+    background-color: lightgreen;
+    box-shadow: 0 0 0.5rem 0.1rem black;
+    text-align: center;
+    padding:0.5rem;
+    margin:1rem;
+}
+
+.done {
+    text-decoration: line-through;
+    background-color: lightcoral;
+}
+
+.formAddClear {
+    display: flex;
+    margin:1rem;
+}
+
+.addTodo {
+    background: rgba(252, 255, 54, 0.2);
+    border:none;
+    padding:0.2rem;
+    color:yellow;
+    outline:none;
+}
+
+.newTodoButton {
+    background: yellow;
+    border:none;
+    padding: 0.2rem;
+    color:rgb(20, 8, 8);
+    outline:none;
+}.newTodoButton:active {
+    background-color: rgb(20, 8, 8);
+    color:yellow;
+}
+
+.clearButton {
+    margin-left:1rem;
+    background-color: lightcoral;
+    box-shadow: 0 0 0.3rem 0.1rem darkred;
+    color:darkred;
+    border:none;
+    outline: none;
+}.clearButton:active {
+    background-color: red;
 }

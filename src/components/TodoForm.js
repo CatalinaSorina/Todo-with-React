@@ -9,7 +9,7 @@ class TodoForm extends React.Component {
     }
 
     changes = e => {
-        this.setState({ [e.target.task]: e.target.value });
+        this.setState({ [e.target.name]: e.target.value });
     }
 
     submitTodo = e => {
@@ -20,10 +20,13 @@ class TodoForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.submitTodo}>
-                <input name='todo' value={this.state.todo} onChange={this.changes}/>
-                <button>new</button>
-            </form>
+            <div className='formAddClear'>
+                <form onSubmit={this.submitTodo}>
+                    <input className='addTodo' name='todo' value={this.state.todo} onChange={this.changes}/>
+                    <button className='newTodoButton'>new</button>
+                </form>
+                <button className='clearButton' onClick={this.props.deleteFinishedTodos}>Clear finished todos</button>
+            </div>
         )
     }
 }
