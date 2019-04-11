@@ -40,8 +40,12 @@ class TodoApp extends React.Component {
     }
 
     newTodo = aNewTodo => {
+        let nr=0;
+        this.state.todos.map(todo=>{
+            nr=(nr < todo.id) ? todo.id:nr
+        })
         this.state.todos.push({
-            id:(this.state.todos.length+1),
+            id:(nr+1),
             task:aNewTodo,
             finished: false
         });
@@ -63,11 +67,17 @@ class TodoApp extends React.Component {
             })
         });
     }
+
+    deleteFinishedTodos = () => {
+        this.setState({todos: this.state.todos.filter(todo => todo.finished===false)})
+        console.log(this.state.todos);
+    }
+
     render() {
         return (
             <div>
                 <h1>To do:</h1>
-                <TodoForm newTodo={this.newTodo} todosForm={this.state.todos}/>
+                <TodoForm newTodo={this.newTodo} deleteFinishedTodos={this.deleteFinishedTodos}/>
                 <TodoList todos={this.state.todos} checkTodo={this.checkTodo}/>
             </div>
         )
