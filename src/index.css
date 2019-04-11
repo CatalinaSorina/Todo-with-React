@@ -21,3 +21,16 @@ body {
     background-color: black;
     color:rgba(97, 61, 61, 0.7);
 }
+
+.todos{
+
+}
+
+.todo {
+    background-color: green;
+}
+
+.done {
+    text-decoration: line-through;
+    background-color: lightcoral;
+}
