@@ -20,12 +20,12 @@ class TodoForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='formAddClear'>
                 <form onSubmit={this.submitTodo}>
-                    <input name='todo' value={this.state.todo} onChange={this.changes}/>
-                    <button>new</button>
+                    <input className='addTodo' name='todo' value={this.state.todo} onChange={this.changes}/>
+                    <button className='newTodoButton'>new</button>
                 </form>
-                <button onClick={this.props.deleteFinishedTodos}>Clear finished todos</button>
+                <button className='clearButton' onClick={this.props.deleteFinishedTodos}>Clear finished todos</button>
             </div>
         )
     }
